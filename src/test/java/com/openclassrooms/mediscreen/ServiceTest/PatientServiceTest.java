@@ -1,8 +1,8 @@
 package com.openclassrooms.mediscreen.ServiceTest;
 
-import com.openclassrooms.mediscreen.Entities.Patient;
-import com.openclassrooms.mediscreen.Repositories.PatientRepository;
-import com.openclassrooms.mediscreen.Services.PatientService;
+import com.openclassrooms.mediscreen.entities.Patient;
+import com.openclassrooms.mediscreen.repositories.PatientRepository;
+import com.openclassrooms.mediscreen.services.PatientService;
 import com.openclassrooms.mediscreen.constant.Genre;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +36,7 @@ public class PatientServiceTest {
         patient.setPrenom("John");
         patient.setNom("Doe");
         patient.setDateDeNaissance(LocalDate.of(1990, 1, 1));
-        patient.setGenre(Genre.MASCULIN);
+        patient.setGenre(Genre.M);
         patient.setAdressePostale("123 rue Test");
         patient.setNumeroDeTelephone("1234567890");
 
@@ -64,7 +64,7 @@ public class PatientServiceTest {
         patient.setPrenom("Jane");
         patient.setNom("Gi");
         patient.setDateDeNaissance(LocalDate.of(1991, 1, 1));
-        patient.setGenre(Genre.FEMININ);
+        patient.setGenre(Genre.F);
         patient.setAdressePostale("02 rue Test");
         patient.setNumeroDeTelephone("1234567890");
 
@@ -79,8 +79,8 @@ public class PatientServiceTest {
     @Test
     public void getAllPatients_shouldReturnAllPatients() {
         List<Patient> patients = new ArrayList<>();
-        patients.add(new Patient(1L, "Jane", "Doe", LocalDate.of(1990, 1, 1), Genre.FEMININ, "Adresse 1", "1234567890"));
-        patients.add(new Patient(2L, "John", "Smith", LocalDate.of(1985, 5, 10), Genre.MASCULIN, "Adresse 2", "9876543210"));
+        patients.add(new Patient(1L, "Jane", "Doe", LocalDate.of(1990, 1, 1), Genre.F, "Adresse 1", "1234567890"));
+        patients.add(new Patient(2L, "John", "Smith", LocalDate.of(1985, 5, 10), Genre.M, "Adresse 2", "9876543210"));
 
         when(patientRepository.findAll()).thenReturn(patients);
 

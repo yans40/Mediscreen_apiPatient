@@ -1,12 +1,13 @@
-package com.openclassrooms.mediscreen.Controllers;
+package com.openclassrooms.mediscreen.controllers;
 
-import com.openclassrooms.mediscreen.Entities.Patient;
-import com.openclassrooms.mediscreen.Services.PatientService;
+import com.openclassrooms.mediscreen.entities.Patient;
+import com.openclassrooms.mediscreen.services.PatientService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 import java.util.Optional;

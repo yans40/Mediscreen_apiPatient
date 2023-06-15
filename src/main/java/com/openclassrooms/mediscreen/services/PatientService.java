@@ -1,7 +1,7 @@
-package com.openclassrooms.mediscreen.Services;
+package com.openclassrooms.mediscreen.services;
 
-import com.openclassrooms.mediscreen.Entities.Patient;
-import com.openclassrooms.mediscreen.Repositories.PatientRepository;
+import com.openclassrooms.mediscreen.entities.Patient;
+import com.openclassrooms.mediscreen.repositories.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
