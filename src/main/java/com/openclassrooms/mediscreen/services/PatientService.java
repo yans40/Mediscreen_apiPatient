@@ -10,12 +10,8 @@ import java.util.Optional;
 
 @Service
 public class PatientService {
-    private final PatientRepository patientRepository;
-
     @Autowired
-    public PatientService(PatientRepository patientRepository) {
-        this.patientRepository = patientRepository;
-    }
+    private  PatientRepository patientRepository;
 
     public Patient savePatient(Patient patient) {
         return patientRepository.save(patient);
