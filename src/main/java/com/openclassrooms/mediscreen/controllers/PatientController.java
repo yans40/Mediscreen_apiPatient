@@ -16,12 +16,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/apipatient")
 public class PatientController {
-    private final PatientService patientService;
-
     @Autowired
-    public PatientController(PatientService patientService) {
-        this.patientService = patientService;
-    }
+    private PatientService patientService;
 
     @PostMapping("/patients")
     public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {
@@ -30,7 +26,7 @@ public class PatientController {
     }
 
     @GetMapping("/patients/{id}")
-    public ResponseEntity<Patient> getPatientById(@PathVariable Long id) {
+    public ResponseEntity<Patient> getPatientById(@PathVariable(name="id") Long id) {
         Optional<Patient> patient = patientService.getPatientById(id);
         return patient.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
