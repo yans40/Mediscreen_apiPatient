@@ -26,7 +26,7 @@ public class PatientController {
     }
 
     @GetMapping("/patients/{id}")
-    public ResponseEntity<Patient> getPatientById(@PathVariable(name="id") Long id) {
+    public ResponseEntity<Patient> getPatientById(@PathVariable(name = "id") Long id) {
         Optional<Patient> patient = patientService.getPatientById(id);
         return patient.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
